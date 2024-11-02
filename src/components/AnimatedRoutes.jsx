@@ -21,6 +21,7 @@ const routes = [
   { path: "/feedback", element: <Feedback /> },
 ];
 
+// Function that takes all of our pages and animates them in and out of the DOM
 const AnimatedRoutes = () => {
   const location = useLocation();
   return (
@@ -33,8 +34,8 @@ const AnimatedRoutes = () => {
             exact={exact}
             element={
               <motion.div
-                initial={{ translateX: "-100vw", className: "absolute" }}
-                animate={{ translateX: 0, className: "relative" }}
+                initial={{ translateX: "-100vw" }}
+                animate={{ translateX: 0, position: "absolute" }}
                 exit={{ translateX: "100vw" }}
                 transition={{ duration: 0.5 }}
               >

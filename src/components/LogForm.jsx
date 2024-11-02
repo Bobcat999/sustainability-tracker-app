@@ -74,6 +74,7 @@ const LogForm = () => {
         onChange={(e) => {
           setAction(e.target.value);
         }}
+        data-testid="action-select"
       >
         <option disabled value="" className="text-gray-300">
           Select an action

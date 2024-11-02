@@ -26,7 +26,7 @@ const Profile = () => {
   );
 };
 
-const AccountDetail = ({ detailName, value }) => {
+export const AccountDetail = ({ detailName, value }) => {
   return (
     <div className="mx-6">
       <span className="text-primary font-bold text-lg">{detailName}:</span>

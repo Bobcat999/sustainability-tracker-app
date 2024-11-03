@@ -34,9 +34,10 @@ const AnimatedRoutes = () => {
             exact={exact}
             element={
               <motion.div
-                initial={{ translateX: "-100vw" }}
-                animate={{ translateX: 0, position: "absolute" }}
-                exit={{ translateX: "100vw" }}
+                className="absolute w-full"
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100vw" }}
                 transition={{ duration: 0.5 }}
               >
                 {element}

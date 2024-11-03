@@ -9,17 +9,7 @@ import Challenges from "../pages/Challenges";
 import Achievements from "../pages/Achievements";
 import Feedback from "../pages/Feedback";
 import { motion, AnimatePresence } from "framer-motion";
-
-const routes = [
-  { path: "/", element: <Home />, exact: true },
-  { path: "/profile", element: <Profile /> },
-  { path: "/friends", element: <Friends /> },
-  { path: "/dashboard", element: <Dashboard /> },
-  { path: "/login", element: <Login /> },
-  { path: "/challenges", element: <Challenges /> },
-  { path: "/achievements", element: <Achievements /> },
-  { path: "/feedback", element: <Feedback /> },
-];
+import { pages } from "../constants";
 
 // Function that takes all of our pages and animates them in and out of the DOM
 const AnimatedRoutes = () => {
@@ -27,11 +17,10 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        {routes.map(({ path, element, exact }) => (
+        {pages.map((page) => (
           <Route
-            key={path}
-            path={path}
-            exact={exact}
+            key={page.name}
+            path={page.path}
             element={
               <motion.div
                 className="absolute w-full"
@@ -40,7 +29,7 @@ const AnimatedRoutes = () => {
                 exit={{ x: "100vw" }}
                 transition={{ duration: 0.5 }}
               >
-                {element}
+                {React.createElement(page.component)}
               </motion.div>
             }
           />

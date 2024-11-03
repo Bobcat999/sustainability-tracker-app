@@ -3,11 +3,17 @@ import Achievements from "../pages/Achievements";
 import Challenges from "../pages/Challenges";
 import Dashboard from "../pages/Dashboard";
 import Feedback from "../pages/Feedback";
+import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Profile from "../pages/Profile";
 import Settings from "../pages/Settings";
 
 const pages = [
+  {
+    name: "Home",
+    path: "/",
+    component: Home,
+  },
   {
     name: "Profile",
     path: "/profile",

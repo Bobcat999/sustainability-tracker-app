@@ -44,7 +44,7 @@ const LogForm = () => {
   };
 
   return (
-    <div className="bg-cream w-80 rounded-lg h-auto p-4 flex flex-col justify-start align-middle gap-5 shadow-lg">
+    <div className="bg-cream dark:bg-slate-700 w-80 rounded-lg h-auto p-4 flex flex-col justify-start align-middle gap-5 shadow-lg">
       {showConfetti && (
         <Confetti
           className="absolute top-20"
@@ -62,10 +62,10 @@ const LogForm = () => {
           }}
         />
       )}
-      <div className="self-start text-secondary font-bold text-sm">
+      <div className="self-start text-secondary dark:text-white font-bold text-sm">
         Date: {getCurrentDate()}
       </div>
-      <div className="font-bold text-xl text-secondary">
+      <div className="font-bold text-xl text-secondary dark:text-white">
         Log a sustainable action
       </div>
       <select

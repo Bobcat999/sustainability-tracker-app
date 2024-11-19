@@ -16,7 +16,7 @@ const actions = [
 const PastActions = () => {
   const [showPastActions, setShowPastActions] = useState(false);
   return (
-    <div className="bg-cream w-80 rounded-lg shadow-lg font-bold">
+    <div className="bg-cream dark:bg-slate-700 w-80 rounded-lg shadow-lg font-bold dark:text-white">
       {!showPastActions ? (
         <button
           onClick={() => {

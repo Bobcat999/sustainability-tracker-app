@@ -1,16 +1,21 @@
-import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AnimatedRoutes from "./components/AnimatedRoutes";
+import { useSettings } from "./state/SettingsContext";
 
 function App() {
+  const { settings, dispatch } = useSettings();
+
   return (
-    <BrowserRouter>
-      <div className="relative bg-white h-screen z-0">
+    <div className={`${settings.darkMode ? "dark" : ""}`}>
+      <div
+        className={`relative bg-white dark:bg-secondary h-screen z-0 ${
+          settings.darkMode ? "dark" : ""
+        }`}
+      >
         <Navbar />
         <AnimatedRoutes />
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 
